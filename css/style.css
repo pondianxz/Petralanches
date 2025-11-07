@@ -1,0 +1,244 @@
+/*fontes:
+    Great Vibes
+    Zalando Sans
+    Elms Sans
+*/
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Great+Vibes&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+:root{
+    --corBase: hsl(26, 100%, 50%);
+    --corBase2: hsl(273, 68%, 59%);
+    --corFundoRodape: hsl(271, 100%, 14%);
+    --preto: hsl(0, 0%, 0%);
+    --branco: hsl(15, 100%, 99%);
+
+    --linkNavbarWeight: 700;
+    --textoTituloTamanho: 3rem;
+    --textoTituloWeight: 700;
+    --textoPTamanho: 1.4rem;
+    --textoPWeight: 500;
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+
+input, button, body{
+    font-family: 'Elms Sans', Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.textoTitulo{
+    font-size: var(--textoTituloTamanho);
+    font-weight: var(--textoTituloWeight);
+    color: var(--branco);
+}
+.textoP{
+    font-size: var(--textoPTamanho);
+    font-weight: var(--textoPWeight);
+    color: var(--branco);
+}
+
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar > ul {
+    background: var(--corBase);
+    padding: .5em 5em;
+    display: flex;
+    justify-content: space-between;
+
+    .navbarParteEsquerda,.navbarParteDireita{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbarParteEsquerda{
+        gap: 1.5em;
+    }
+    
+    .navbarParteDireita{
+        gap: 1em;
+    }
+
+    .linkNavbar{
+        font-weight: var(--linkNavbarWeight);
+        font-size: 1.2rem;
+        color: var(--preto);
+    }
+
+    .btnNavbar{
+        font-size: 1.2rem;
+        font-weight: var(--linkNavbarWeight);
+        padding: .3em .7em; 
+        border-radius: .3em;
+        display: flex;
+        align-items: center;
+
+        svg{
+            fill: var(--preto);
+        }
+    }
+
+    .btnAvalieNos{
+        background: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
+    }
+
+}
+
+
+
+.divImgSecaoPrincipal{
+    width: 100%;
+    height: 800px;
+    background: url(../images/sandwich-1920-x-1200-picture-sw2gb5dod8me22mo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .transparenteImgSecaoPrincipal{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.3), hsla(0, 0%, 0%, 0.75));
+    }
+
+    .textosImgSecaoPrincipal{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.2em;
+
+        .textoTituloPrincipal{
+            width: 42%;
+            text-align: center;
+            font-size: 4.2rem;
+            font-weight: 800;
+            color: var(--branco);
+        }
+
+        .textoSlogan{
+            font-size: var(--textoPTamanho);
+            font-weight: var(--textoPWeight);
+            color: var(--branco);
+        }
+    }
+}
+
+
+.divImgSecaoCalculo{
+    width: 100%;
+    height: 550px;
+    background: url(../images/fritas.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .transparenteImgSecaoCalculo{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: hsla(0, 0%, 0%, 0.5);
+    }
+
+    .textosImgSecaoCalculo{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+
+        .textoPSecaoCalculo{
+            text-align: center;
+            width: 26%;
+        }
+
+        .btnIrParaCardapio{
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: .3em .7em; 
+            border-radius: .3em;
+            background: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
+        }
+    }
+}
+
+
+
+
+
+
+footer{
+    background: var(--corFundoRodape);
+    padding: 2em 5em;
+
+    .rodapeParteCima{
+        display: flex;
+        justify-content: space-between;
+
+        .rodapeTudoLogo{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+
+            .linhaLogoRodape{
+                width: 100%;
+                border: 1px solid hsl(from var(--corBase2) h s calc(l - 23));
+            }
+        }
+
+        .divRodapeLinks{
+            display: flex;
+            flex-direction: column;
+            gap: .3em;
+
+            h6{
+                font-weight: 600;
+            }
+            p, a, h6{
+                color: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
+                font-size: 1.1rem;
+            }
+        }
+
+    }
+
+
+
+    .rodapeParteBaixo{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
