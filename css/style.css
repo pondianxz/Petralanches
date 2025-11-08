@@ -1,26 +1,26 @@
-/*fontes:
-    Great Vibes
-    Zalando Sans
-    Elms Sans
-*/
-@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Great+Vibes&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900');
 :root{
-    --corBase: hsl(26, 100%, 50%);
-    --corBase2: hsl(273, 68%, 59%);
-    --corFundoRodape: hsl(271, 100%, 14%);
+    --corBase: hsl(353, 86%, 54%);
+    --corBase2: hsl(342, 76%, 65%);
+    --corBase3: hsl(25, 100%, 66%);
+    --corFundoRodape: hsl(333, 96%, 18%);
     --preto: hsl(0, 0%, 0%);
     --branco: hsl(15, 100%, 99%);
 
     --linkNavbarWeight: 700;
     --textoTituloTamanho: 3rem;
     --textoTituloWeight: 700;
+    --textoSubtituloWeight: 600;
     --textoPTamanho: 1.4rem;
     --textoPWeight: 500;
 }
 
 button{
-    border: none;
     cursor: pointer;
+}
+
+input, button{
+    border: none;
 }
 
 input, button, body{
@@ -42,6 +42,11 @@ a{
     color: var(--branco);
 }
 
+body{
+    padding-top: 64px;
+    overflow-x: hidden;
+}
+
 
 header{
     position: fixed;
@@ -50,9 +55,9 @@ header{
     z-index: 999;
 }
 
-.navbar > ul {
+.navbarr > ul {
     background: var(--corBase);
-    padding: .5em 5em;
+    padding: .6em 11em;
     display: flex;
     justify-content: space-between;
 
@@ -90,7 +95,7 @@ header{
     }
 
     .btnAvalieNos{
-        background: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
+        background: var(--corBase3);
     }
 
 }
@@ -103,6 +108,8 @@ header{
     background: url(../images/sandwich-1920-x-1200-picture-sw2gb5dod8me22mo.jpg);
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     position: relative;
 
     .transparenteImgSecaoPrincipal{
@@ -112,7 +119,7 @@ header{
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.3), hsla(0, 0%, 0%, 0.75));
+        background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.3), hsla(0, 0%, 0%, 0.82));
     }
 
     .textosImgSecaoPrincipal{
@@ -148,10 +155,11 @@ header{
 
 .divImgSecaoCalculo{
     width: 100%;
-    height: 550px;
+    height: 620px;
     background: url(../images/fritas.jpg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
 
     .transparenteImgSecaoCalculo{
@@ -162,7 +170,7 @@ header{
         width: 100%;
         height: 100%;
 
-        background: hsla(0, 0%, 0%, 0.5);
+        background: linear-gradient(to top, hsla(from var(--preto) h s l / 0.2), hsla(from var(--preto) h s l / 0.8));
     }
 
     .textosImgSecaoCalculo{
@@ -187,9 +195,94 @@ header{
         .btnIrParaCardapio{
             font-size: 1.2rem;
             font-weight: 500;
-            padding: .3em .7em; 
+            padding: .5em .7em;
             border-radius: .3em;
-            background: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
+            background: var(--corBase);
+            color: var(--branco);
+        }
+    }
+}
+
+
+.secaoPromocoes{
+    background: url(../images/fundoBurger_ed.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: 1px solid hsl(from var(--preto) h s calc(l + 21));
+    border-bottom: 1px solid hsl(from var(--preto) h s calc(l + 21));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12em 0;
+    gap: 20em;
+
+    .divVideoBarra{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .divVideoBarra2{
+        box-shadow: 0 20px 20px 10px hsla(from var(--preto) h s l / 0.5);
+    }
+
+    .centroSecaoPromocoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        .cardsPromocoes{
+            display: flex;
+            gap: 1em;
+
+            .card{
+                background: hsl(from var(--preto) h s calc(l + 15));
+                border: 1px solid hsl(from var(--preto) h s calc(l + 25));
+                color: var(--branco);
+
+                .card-title{
+                    font-size: 1.4rem;
+                    font-weight: var(--textoSubtituloWeight);
+                }
+                .card-text{
+                    font-size: 1.2rem;
+                }
+
+                .list-group-item{
+                    display: flex;
+                    justify-content: space-between;
+                    background: hsl(from var(--preto) h s calc(l + 15));
+
+                    .textoDesconto{
+                        color: var(--corBase);
+                    }
+
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .imgCardPromocoes{
+                height: 230px;
+            }
+        }
+
+        .btnSaibaMaisPromocoesManeiras{
+            font-size: 1.3rem;
+            border-radius: .3em;
+            padding: .3em .7em;
+            background: hsl(from var(--corBase) h s l);
+            color: var(--branco);
+        }
+
+        .textoPromocoesManeiras{
+            color: var(--corBase3);
+            text-shadow: 0 0 15px hsl(from var(--corBase3) h s l / 0.9);
+            text-align: center;
         }
     }
 }
@@ -197,11 +290,12 @@ header{
 
 
 
-
-
 footer{
     background: var(--corFundoRodape);
-    padding: 2em 5em;
+    padding: 3.2em 11.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5em;
 
     .rodapeParteCima{
         display: flex;
@@ -221,24 +315,76 @@ footer{
         .divRodapeLinks{
             display: flex;
             flex-direction: column;
-            gap: .3em;
 
-            h6{
-                font-weight: 600;
-            }
-            p, a, h6{
-                color: hsl(from var(--corBase) h calc(s + 70) calc(l + 20));
-                font-size: 1.1rem;
+            .divConsertarTamanhoLink{
+                width: fit-content;
             }
         }
 
     }
 
-
+    .textoH6Rodape{
+        font-weight: 600;
+    }
+    
+    p, a, .textoH6Rodape{
+        color: hsl(from var(--corBase) h s calc(l + 10));
+        font-size: 1.3rem;
+    }
 
     .rodapeParteBaixo{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        .inputEBotaoAgrupados{
+            display: flex;
+            font-size: var(--textoPTamanho);
+        }
+
+        .inputNewsletterRodape{
+            background: hsl(from var(--corBase2) h s calc(l - 22));
+            color: var(--branco);
+            border-top-left-radius: .3em;
+            border-bottom-left-radius: .3em;
+            font-weight: var(--textoPWeight);
+            outline: none;
+            padding: .2em .5em;
+        }
+        .inputNewsletterRodape::placeholder{
+            color: hsl(from var(--corBase2) h s calc(l - 40));
+        }
+
+        .btnNewsletterRodape{
+            background: var(--corBase3);
+            border-top-right-radius: .3em;
+            border-bottom-right-radius: .3em;
+            width: 45px;
+
+            svg{
+                fill: var(--preto);
+            }
+        }
+
+        .btnSvgSocial{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--corBase);
+            transition: .3s;
+
+            path, svg, rect {
+                fill: var(--branco);
+                transition: .1s;
+            }
+        }
+        .btnSvgSocial:hover{
+            background: var(--branco);
+
+            path, svg, rect {
+                fill: var(--corBase);
+            }
+        }
     }
 
 }
